@@ -1,0 +1,185 @@
+@import "./node";
+@import "./variables";
+@import "./navbar";
+@import "./information";
+@import "./glowAnimation";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-app-region: no-drag;
+  cursor: default;
+}
+
+body {
+  background: $background;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: rgba(255, 255, 255, 0.89);
+  overflow: hidden;
+}
+
+.navbar {
+  width: 100%;
+  overflow: hidden;
+}
+
+.title-wrapper {
+  padding: 0 1rem;
+  width: 30%;
+  height: auto;
+  float: left;
+}
+
+.settings {
+  width: 70%;
+  float: left;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+  padding: 1rem;
+  .secondary-title {
+    margin-bottom: 0.7rem;
+  }
+}
+
+.navbar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin neon-btn($color, $shadow-color) {
+  outline: none;
+  text-decoration: none;
+  color: $color;
+  border-radius: 50px;
+  background-color: transparent;
+  font-weight: bold;
+}
+
+.stop-positive-btn {
+  height: 6vh;
+  width: 10vh;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  @include neon-btn($positive-color, $positive-shadow-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .play-stop-symbol {
+    width: 0;
+    height: 20px;
+    border-style: solid;
+    transition: 300ms all ease;
+    cursor: pointer;
+    &.stop {
+      border-width: 12px 12px 12px 12px;
+      border-color: $negative-color;
+      animation: glow-box-negative 1s ease-in-out infinite alternate;
+    }
+  }
+  &:hover {
+    animation: glow-box-negative 1s ease-in-out infinite alternate;
+    animation-delay: 700ms;
+    background: $negative-color;
+
+    .play-stop-symbol {
+      &.stop {
+        border-color: $background;
+      }
+    }
+    transition: 600ms ease-in-out all;
+  }
+}
+
+.positive-neon-btn {
+  height: 6vh;
+  width: 10vh;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  @include neon-btn($positive-color, $positive-shadow-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .play-stop-symbol {
+    width: 0;
+    border-color: transparent transparent transparent $positive-color;
+    height: 20px;
+    border-width: 10px 0 10px 20px;
+    border-style: solid;
+    transition: 300ms all ease;
+    cursor: pointer;
+    &.stop {
+      border-width: 12px 12px 12px 12px;
+      border-color: $negative-color;
+    }
+  }
+
+  &:hover {
+    animation: glow-box-positive 1s ease-in-out infinite alternate;
+    animation-delay: 700ms;
+    background: $positive-color;
+
+    .play-stop-symbol {
+      border-color: transparent transparent transparent $background;
+      &.stop {
+        border-color: $background;
+      }
+    }
+    transition: 600ms ease-in-out all;
+  }
+}
+
+.btn {
+  cursor: pointer;
+}
+
+.negative-neon-btn {
+  padding: 0.75rem 1rem;
+  font-size: 0.75rem;
+  animation: glow-text-negative 1s ease-in-out infinite alternate;
+  @include neon-btn($negative-color, $negative-shadow-color);
+  &:hover {
+    animation: glow-box-negative 1s ease-in-out infinite alternate;
+    animation-delay: 700ms;
+    background: $negative-color;
+    color: $background;
+    transition: 600ms ease-in-out all;
+  }
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+  align-items: center;
+  height: 9vh;
+}
+
+.grids {
+  margin-bottom: 1rem;
+  overflow: hidden;
+  width: 100%;
+}
+
+.title {
+  color: #fff;
+  animation: glow-text-blue 1s ease-in-out infinite alternate;
+  margin-bottom: 1rem;
+}
+
+.secondary-title {
+  color: #eda4ff;
+  animation: glow-text-purple 1s ease-in-out infinite alternate;
+}

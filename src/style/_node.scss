@@ -1,0 +1,135 @@
+@import "./variables";
+.node-btn {
+  width: 2%;
+  height: 4vh;
+  background: transparent;
+  text-decoration: none;
+  border: 0.1px solid $wall-color;
+  box-sizing: border-box;
+  float: left;
+  cursor: pointer;
+}
+
+.node-information {
+  width: 2em;
+  height: 3vh;
+  background: transparent;
+  text-decoration: none;
+  border: 0.1px solid $wall-color;
+  box-sizing: border-box;
+  border-style: none;
+  outline: none;
+}
+
+.start-node {
+  background: #f1ff33;
+  border: none;
+}
+
+.is-set-start-node {
+  animation: border-yellow-animation 2s ease-in-out infinite alternate;
+}
+
+@keyframes border-yellow-animation {
+  from {
+    border: 0.1px solid $wall-color;
+  }
+  to {
+    border: 0.1px solid #97a102;
+  }
+}
+
+.start-node-btn {
+  cursor: pointer;
+  background: #f1ff33;
+  border-radius: 30%;
+  &:hover {
+    background: #f1ff33c4;
+  }
+}
+
+.finish-node {
+  background: #008000;
+  border: none;
+}
+
+.is-set-finish-node {
+  animation: border-green-animation 2s ease-in-out infinite alternate;
+}
+
+@keyframes border-green-animation {
+  from {
+    border: 0.1px solid $wall-color;
+  }
+  to {
+    border: 0.1px solid #005f00;
+  }
+}
+
+.finish-node-btn {
+  cursor: pointer;
+  border-radius: 30%;
+  background: #008000;
+  &:hover {
+    background: #008000ce;
+  }
+}
+
+.wall-node {
+  border: none;
+  background: #ffffff42;
+}
+
+.visited-node {
+  background: rgb(230, 130, 0);
+  border: none;
+  animation: spread-visited-node-animation 1.3s ease-in-out alternate;
+}
+@keyframes spread-visited-node-animation {
+  0% {
+    transform: scale(0.3);
+    background-color: rgba(0, 47, 255, 0.945);
+    border-radius: 100%;
+  }
+
+  50% {
+    background-color: rgb(6, 255, 213);
+  }
+
+  75% {
+    transform: scale(1.2);
+    background-color: rgb(160, 255, 7);
+  }
+
+  100% {
+    transform: scale(1);
+    background-color: rgb(230, 176, 0);
+  }
+}
+
+.shortest-path {
+  background: rgb(146, 255, 5);
+  animation: shortest-path-animation 1.3s ease-in-out alternate;
+  border: none;
+}
+
+@keyframes shortest-path-animation {
+  0% {
+    transform: scale(0.3);
+    background-color: rgba(255, 8, 0, 0.945);
+  }
+
+  50% {
+    background-color: rgba(255, 38, 0, 0.75);
+  }
+
+  75% {
+    transform: scale(1.2);
+    background-color: rgb(172, 69, 0);
+  }
+
+  100% {
+    transform: scale(1);
+    background-color: rgb(146, 255, 5);
+  }
+}

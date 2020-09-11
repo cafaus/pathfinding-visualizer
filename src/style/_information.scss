@@ -1,0 +1,104 @@
+@import "./variables";
+@import "./glowAnimation";
+.information {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background: $background;
+  top: 0;
+  clip-path: circle(100px at 100% 115%);
+  -webkit-clip-path: circle(100px at 100% 115%);
+  transition: all 1s ease-out;
+  pointer-events: none;
+  .title {
+    text-align: center;
+    margin-top: 1.5em;
+  }
+  &.open {
+    clip-path: circle(5000px at 100% 115%);
+    -webkit-clip-path: circle(5000px at 100% 115%);
+    pointer-events: all;
+  }
+}
+
+.information-items {
+  display: grid;
+  height: 80vh;
+  width: 100%;
+  grid-template-columns: auto auto auto auto auto auto;
+}
+
+.information-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.information-item-1 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.information-item-2 {
+  grid-column-start: 3;
+  grid-column-end: 5;
+}
+.information-item-3 {
+  grid-column-start: 5;
+  grid-column-end: 7;
+}
+
+.information-item-4 {
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+.information-item-5 {
+  grid-column-start: 4;
+  grid-column-end: 7;
+}
+.information-btn {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+  padding: 1em;
+  border-radius: 100%;
+  z-index: 2;
+
+  .information-btn-line {
+    width: 0.5em;
+    height: 1.5em;
+    background: #eda4ff;
+    border-radius: 30%;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .information-btn-line::after {
+    content: "";
+    position: absolute;
+    width: 0.5em;
+    height: 0.5em;
+    background: #eda4ff;
+    border-radius: 50%;
+    transform: translateY(-0.7em);
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+  }
+  &.open {
+    .information-btn-line,
+    .information-btn-line::after {
+      background: $negative-color;
+    }
+    .information-btn-line {
+      transform: rotate(-37deg);
+      height: 2em;
+    }
+    .information-btn-line::after {
+      transform: translateY(0.8em) translatex(-0.7em) rotate(-12deg);
+      width: 2em;
+      border-radius: 30%;
+    }
+  }
+}

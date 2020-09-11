@@ -1,0 +1,53 @@
+@import "./variables";
+
+.pathfinding-algorithm-selector {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: none;
+  box-shadow: none;
+  border: 0;
+  background: #2c3e50;
+  background-image: none;
+}
+
+.pathfinding-algorithm-selector::-ms-expand {
+  display: none;
+}
+
+.pathfinding-algorithm-selector-wrapper {
+  position: relative;
+  display: flex;
+  width: 7em;
+  height: 1.2em;
+  line-height: 3;
+  background: #2c3e50;
+  overflow: hidden;
+  border-radius: 0.25em;
+}
+
+.pathfinding-algorithm-selector {
+  flex: 1;
+  padding: 0 0.5em;
+  color: #fff;
+  cursor: pointer;
+}
+
+.pathfinding-algorithm-selector-wrapper::after {
+  content: "\25BC";
+  position: absolute;
+  top: -15px;
+  right: 0;
+  padding: 0 0.2em;
+  cursor: pointer;
+  pointer-events: none;
+  -webkit-transition: 0.25s all ease;
+  -o-transition: 0.25s all ease;
+  transition: 0.25s all ease;
+  transform: scale(0.7);
+}
+
+.pathfinding-algorithm-selector-wrapper:hover::after {
+  color: #eda4ff;
+}

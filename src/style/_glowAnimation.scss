@@ -1,0 +1,77 @@
+@keyframes glow-box-positive {
+  from {
+    box-shadow: 0 0 0px $positive-color, 0 0 0px $positive-color,
+      0 0 0px $positive-shadow-color, 0 0 0px $positive-shadow-color,
+      0 0 0px $positive-shadow-color, 0 0 0px $positive-shadow-color,
+      0 0 0px $positive-shadow-color;
+  }
+  to {
+    box-shadow: 0 0 5px $positive-color, 0 0 5px $positive-color,
+      0 0 10px $positive-shadow-color, 0 0 10px $positive-shadow-color,
+      0 0 20px $positive-shadow-color, 0 0 30px $positive-shadow-color,
+      0 0 40px $positive-shadow-color;
+  }
+}
+
+@keyframes glow-text-negative {
+  from {
+    text-shadow: 0 0 3px $negative-color, 0 0 7px $negative-color,
+      0 0 12px $negative-shadow-color, 0 0 18px $negative-shadow-color,
+      0 0 22px $negative-shadow-color, 0 0 27px $negative-shadow-color,
+      0 0 32px $negative-shadow-color;
+  }
+  to {
+    text-shadow: 0 0 7px $negative-color, 0 0 17px $negative-color,
+      0 0 27px $negative-shadow-color, 0 0 37px $negative-shadow-color,
+      0 0 47px $negative-shadow-color, 0 0 57px $negative-shadow-color,
+      0 0 67px $negative-shadow-color;
+  }
+}
+
+@keyframes glow-box-negative {
+  from {
+    box-shadow: 0 0 0px $negative-color, 0 0 0px $negative-color,
+      0 0 0px $negative-shadow-color, 0 0 0px $negative-shadow-color,
+      0 0 0px $negative-shadow-color, 0 0 0px $negative-shadow-color,
+      0 0 0px $negative-shadow-color;
+  }
+  to {
+    box-shadow: 0 0 5px $negative-color, 0 0 5px $negative-color,
+      0 0 10px $negative-shadow-color, 0 0 10px $negative-shadow-color,
+      0 0 20px $negative-shadow-color, 0 0 30px $negative-shadow-color,
+      0 0 40px $negative-shadow-color;
+  }
+}
+
+@keyframes glow-text-purple {
+  from {
+    text-shadow: 0 0 3px #eda4ff, 0 0 7px #eda4ff, 0 0 12px #cf0dff,
+      0 0 18px #cf0dff, 0 0 22px #cf0dff, 0 0 27px #cf0dff, 0 0 32px #cf0dff;
+  }
+  to {
+    text-shadow: 0 0 7px #eda4ff, 0 0 17px #eda4ff, 0 0 27px #cf0dff,
+      0 0 37px #cf0dff, 0 0 47px #cf0dff, 0 0 57px #cf0dff, 0 0 67px #cf0dff;
+  }
+}
+
+@keyframes glow-box-purple {
+  from {
+    box-shadow: 0 0 3px #eda4ff, 0 0 7px #eda4ff, 0 0 12px #cf0dff,
+      0 0 18px #cf0dff, 0 0 22px #cf0dff, 0 0 27px #cf0dff, 0 0 32px #cf0dff;
+  }
+  to {
+    box-shadow: 0 0 7px #eda4ff, 0 0 17px #eda4ff, 0 0 27px #cf0dff,
+      0 0 37px #cf0dff, 0 0 47px #cf0dff, 0 0 57px #cf0dff, 0 0 67px #cf0dff;
+  }
+}
+
+@keyframes glow-text-blue {
+  from {
+    text-shadow: 0 0 3px #fff, 0 0 7px #fff, 0 0 12px #0073e6, 0 0 18px #0073e6,
+      0 0 22px #0073e6, 0 0 27px #0073e6, 0 0 32px #0073e6;
+  }
+  to {
+    text-shadow: 0 0 7px #fff, 0 0 17px #fff, 0 0 27px #0073e6, 0 0 37px #0073e6,
+      0 0 47px #0073e6, 0 0 57px #0073e6, 0 0 67px #0073e6;
+  }
+}
